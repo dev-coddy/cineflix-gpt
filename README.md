@@ -12,7 +12,7 @@
   - redirect to Browse Page
 
 - Browse Page(after authentication)
-  - Header
+  - Navbar
   - Main Movie (Trailer in Background)
   - Title - description and rating
 

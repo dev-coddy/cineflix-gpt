@@ -1,5 +1,16 @@
-function App() {
-  return <h2 className="text-3xl ">CineFlix GPT</h2>;
-}
+import { Route, Routes } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
+import Home from "./components/pages/Home";
+
+function App() {
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
+  );
+}
 export default App;

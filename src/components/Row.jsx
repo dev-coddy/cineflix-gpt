@@ -13,15 +13,24 @@ const Row = ({ title, requestURL }) => {
     });
   }, [requestURL]);
 
-  console.log(movies);
+  const slideLeft = () => {
+    let slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft - 500;
+  };
+
+  const slideRight = () => {
+    let slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft + 500;
+  };
 
   return (
     <>
       <h2 className="text-white font-bold md:text-xl p-4">{title}</h2>
       <div className="relative flex items-center group">
         <MdChevronLeft
+          onClick={slideLeft}
           size={35}
-          className="bg-white rounded-full opacity-50 absolute z-10 hidden group-hover:block"
+          className="bg-white rounded-full opacity-50 absolute z-10 hidden group-hover:block cursor-pointer"
         />
         <div
           id={"slider"}
@@ -32,8 +41,9 @@ const Row = ({ title, requestURL }) => {
           })}
         </div>
         <MdChevronRight
+          onClick={slideRight}
           size={35}
-          className="bg-white rounded-full opacity-50 absolute end-0 hidden group-hover:block"
+          className="bg-white rounded-full opacity-50 absolute z-10 end-0 hidden group-hover:block cursor-pointer"
         />
       </div>
     </>

@@ -7,7 +7,6 @@ export const Main = () => {
   const [movies, setMovies] = useState([]);
 
   const movie = movies[Math.floor(Math.random() * movies.length)];
-  console.log(movie);
 
   const truncateString = (str, num) => {
     if (str?.length > num) {

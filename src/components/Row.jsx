@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Movie from "../components/Movie";
 
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 const Row = ({ title, requestURL }) => {
   const [movies, setMovies] = useState([]);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     axios.get(requestURL).then((response) => {
@@ -14,13 +15,11 @@ const Row = ({ title, requestURL }) => {
   }, [requestURL]);
 
   const slideLeft = () => {
-    let slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft - 500;
+    sliderRef.current.scrollLeft -= 500;
   };
 
   const slideRight = () => {
-    let slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft + 500;
+    sliderRef.current.scrollLeft += 500;
   };
 
   return (
@@ -33,7 +32,7 @@ const Row = ({ title, requestURL }) => {
           className="bg-white rounded-full opacity-50 absolute z-10 hidden group-hover:block cursor-pointer"
         />
         <div
-          id={"slider"}
+          ref={sliderRef}
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         >
           {movies.map((movie) => {

@@ -35,7 +35,7 @@ const Row = ({ title, requestURL }) => {
         />
         <div
           ref={sliderRef}
-          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+          className="py-2 w-full h-full overflow-x-scroll overflow-y-visible whitespace-nowrap scroll-smooth scrollbar-hide"
         >
           {movies.map((movie) => {
             return <Movie movie={movie} key={movie.id} />;

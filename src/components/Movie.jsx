@@ -3,9 +3,14 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const Movie = ({ movie }) => {
   const [like, setLike] = useState(false);
+  const [hover, setHover] = useState(false);
 
   return (
-    <div className="group relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer p-2 transition-transform duration-300 hover:scale-110">
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={`group relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer p-2 transition-transform duration-300 ${hover ? "scale-125 z-50" : "scale-100"} `}
+    >
       {/* Movie Image */}
       <img
         className="rounded-lg"
@@ -14,12 +19,14 @@ const Movie = ({ movie }) => {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-black/80 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg p-4 flex flex-col justify-end">
+      <div
+        className={`absolute inset-0 bg-gradient-to-t from-black  text-white opacity-0 ${hover ? "opacity-100" : "opacity-0"} transition-opacity duration-300 rounded-lg p-4 flex flex-col justify-end`}
+      >
         <h3 className="text-sm md:text-base font-bold mb-1">{movie.title}</h3>
 
-        <p className="text-xs text-gray-300 mb-1">⭐ {9.8}</p>
+        <p className="text-xs text-gray-300 mb-1">⭐ {movie.vote_average}</p>
 
-        <p className="text-xs line-clamp-3 mb-2">{"Text"}</p>
+        <p className="text-xs line-clamp-3 mb-2">{movie.overview}</p>
 
         <button
           onClick={() => setLike(!like)}

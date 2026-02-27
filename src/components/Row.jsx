@@ -14,6 +14,8 @@ const Row = ({ title, requestURL }) => {
     });
   }, [requestURL]);
 
+  console.log(movies);
+
   const slideLeft = () => {
     sliderRef.current.scrollLeft -= 500;
   };
@@ -36,7 +38,7 @@ const Row = ({ title, requestURL }) => {
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         >
           {movies.map((movie) => {
-            return <Movie movie={movie} />;
+            return <Movie movie={movie} key={movie.id} />;
           })}
         </div>
         <MdChevronRight

@@ -26,7 +26,9 @@ const Row = ({ title, requestURL }) => {
 
   return (
     <>
-      <h2 className="text-white font-bold md:text-xl p-4">{title}</h2>
+      <h2 className="text-white font-bold md:text-lg p-4 font-['Press_Start_2P']">
+        {title}
+      </h2>
       <div className="relative flex items-center group">
         <MdChevronLeft
           onClick={slideLeft}

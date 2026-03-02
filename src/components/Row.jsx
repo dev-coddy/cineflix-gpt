@@ -31,11 +31,11 @@ const Row = ({ title, requestURL }) => {
         <MdChevronLeft
           onClick={slideLeft}
           size={35}
-          className="bg-white rounded-full opacity-50 absolute z-10 hidden group-hover:block cursor-pointer"
+          className="bg-white rounded-full opacity-50 absolute z-20 hidden group-hover:block cursor-pointer"
         />
         <div
           ref={sliderRef}
-          className="py-2 w-full h-full overflow-x-scroll overflow-y-visible whitespace-nowrap scroll-smooth scrollbar-hide"
+          className=" w-full h-full overflow-x-scroll overflow-y-visible whitespace-nowrap scroll-smooth scrollbar-hide"
         >
           {movies.map((movie) => {
             return <Movie movie={movie} key={movie.id} />;
@@ -44,7 +44,7 @@ const Row = ({ title, requestURL }) => {
         <MdChevronRight
           onClick={slideRight}
           size={35}
-          className="bg-white rounded-full opacity-50 absolute z-10 end-0 hidden group-hover:block cursor-pointer"
+          className="bg-white rounded-full opacity-50 absolute z-20 end-0 hidden group-hover:block cursor-pointer"
         />
       </div>
     </>

@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 
 const Login = () => {
   return (
@@ -13,11 +12,6 @@ const Login = () => {
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 -z-0"></div>
-
-      {/* Navbar */}
-      <div className="relative z-10 w-full">
-        <Navbar />
-      </div>
     </div>
   );
 };

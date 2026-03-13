@@ -9,7 +9,7 @@ const Movie = ({ movie }) => {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className={`group relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer p-2 transition-transform duration-300 ${hover ? "scale-125 z-50" : "scale-100"} `}
+      className={`group relative w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer p-2 transition-transform duration-300  `}
     >
       {/* Movie Image */}
       <img

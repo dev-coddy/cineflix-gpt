@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-import { app, auth } from "../Firebase";
+import { app, auth } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

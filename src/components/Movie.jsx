@@ -22,7 +22,9 @@ const Movie = ({ movie }) => {
       <div
         className={`w-[100%] absolute inset-0 bg-gradient-to-t from-black  text-white opacity-0 ${hover ? "opacity-100" : "opacity-0"} transition-opacity duration-300 rounded-lg p-4 flex flex-col justify-end`}
       >
-        <h3 className="text-sm md:text-base font-bold mb-1 ">{movie.title}</h3>
+        <h3 className="text-sm md:text-base font-bold mb-1 line-clamp-2 break-words">
+          {movie.title}
+        </h3>
 
         <p className="text-xs text-gray-300 mb-1">⭐ {movie.vote_average}</p>
 

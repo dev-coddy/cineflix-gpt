@@ -7,7 +7,7 @@
 
 # Features
 
-- Login/Sign up
+- SignIn/Sign up
   - Sign In/Sign Up Form
   - redirect to Browse Page
 

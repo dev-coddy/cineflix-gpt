@@ -14,8 +14,6 @@ const Row = ({ title, requestURL }) => {
     });
   }, [requestURL]);
 
-  console.log(movies);
-
   const slideLeft = () => {
     sliderRef.current.scrollLeft -= 500;
   };

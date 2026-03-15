@@ -27,8 +27,6 @@ export const Main = () => {
       });
   }, []);
 
-  console.log(movie);
-
   return (
     <div className="w-full h-[550px] text-white">
       <div className="w-full h-full">

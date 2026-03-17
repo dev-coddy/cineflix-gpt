@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
 import { UserAuth } from "../../context/AuthContext";
 
 const SignUp = () => {
+  const [error, setError] = useState(null);
   const email = useRef(null);
   const password = useRef(null);
   const navigate = useNavigate();
@@ -17,7 +18,8 @@ const SignUp = () => {
       await signUp(email.current.value, password.current.value);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      console.log("hello");
+      setError(error.message);
     }
   };
 
@@ -34,6 +36,7 @@ const SignUp = () => {
           <div className="max-w-[450px] h-[600px] bg-black/75 text-white mx-auto">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="font-bold text-3xl">Sign Up</h1>
+              {error ? <p className="bg-red-900 p-3 my-3 ">{error}</p> : null}
               <form onSubmit={handleSubmit} className="flex flex-col">
                 <input
                   ref={email}

@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className="w-full z-[100] absolute flex justify-around items-center p-4 font-['Press_Start_2P']">
       <h1
-        className="text-red-600 text-2xl  cursor-pointer"
+        className="text-red-600 text-lg  sm:text-2xl  cursor-pointer"
         onClick={() => {
           navigate("/");
         }}
